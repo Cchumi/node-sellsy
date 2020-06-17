@@ -26,10 +26,10 @@ var api = {
 
 function Sellsy() {
   var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      _ref$creds = _ref.creds,
-      creds = _ref$creds === undefined ? {} : _ref$creds,
-      _ref$endPoint = _ref.endPoint,
-      endPoint = _ref$endPoint === undefined ? DEFAULT_ENDPOINT : _ref$endPoint;
+    _ref$creds = _ref.creds,
+    creds = _ref$creds === undefined ? {} : _ref$creds,
+    _ref$endPoint = _ref.endPoint,
+    endPoint = _ref$endPoint === undefined ? DEFAULT_ENDPOINT : _ref$endPoint;
 
   this.creds = creds;
   this.endPoint = endPoint;
@@ -41,11 +41,13 @@ Sellsy.prototype.api = function () {
   var _this = this;
 
   var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      _ref2$method = _ref2.method,
-      method = _ref2$method === undefined ? 'Infos.getInfos' : _ref2$method,
-      _ref2$params = _ref2.params,
-      params = _ref2$params === undefined ? {} : _ref2$params;
-
+    _ref2$method = _ref2.method,
+    method = _ref2$method === undefined ? 'Infos.getInfos' : _ref2$method,
+    _ref2$params = _ref2.params,
+    params = _ref2$params === undefined ? {} : _ref2$params;
+  _ref2$dofile = _ref2.dofile,
+    dofile = _ref2$dofile === undefined ? {} : _ref2$dofile;
+  console.log("sellsy ", dofile);
   var getOauth = function getOauth() {
 
     return new OAuth.OAuth(_this.endPoint + api.requestTokenUrl, _this.endPoint + api.accessTokenUrl, _this.creds.consumerKey, _this.creds.consumerSecret, '1.0', null, 'PLAINTEXT');
@@ -60,6 +62,9 @@ Sellsy.prototype.api = function () {
         params: params
       })
     };
+    if (dofile) {
+      postData['do_file'] = JSON.stringify(dofile);
+    }
 
     getOauth().post(_this.endPoint + api.url, _this.creds.userToken, _this.creds.userSecret, postData, function (e, data, res) {
       try {
