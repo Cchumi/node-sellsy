@@ -37,7 +37,7 @@ Sellsy.prototype.api = function({ method = 'Infos.getInfos', params = {}} = {}) 
   return new Promise((resolve, reject) => {
     const postData = {
       request: 1,
-      io_mode: 'jsons',
+      io_mode: 'json',
       do_in: JSON.stringify({
         method: method,
         params: params
