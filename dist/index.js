@@ -47,7 +47,7 @@ Sellsy.prototype.api = function () {
     params = _ref2$params === undefined ? {} : _ref2$params;
   _ref2$dofile = _ref2.dofile,
     dofile = _ref2$dofile === undefined ? {} : _ref2$dofile;
-  console.log("sellsy ", dofile);
+  console.log("sellsy s ", dofile);
   var getOauth = function getOauth() {
 
     return new OAuth.OAuth(_this.endPoint + api.requestTokenUrl, _this.endPoint + api.accessTokenUrl, _this.creds.consumerKey, _this.creds.consumerSecret, '1.0', null, 'PLAINTEXT');
