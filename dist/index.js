@@ -44,7 +44,7 @@ Sellsy.prototype.api = function () {
     _ref2$method = _ref2.method,
     method = _ref2$method === undefined ? 'Infos.getInfos' : _ref2$method,
     _ref2$params = _ref2.params,
-    params = _ref2$params === undefined ? {} : _ref2$params;
+    params = _ref2$params === undefined ? {} : _ref2$params,
   _ref2$dofile = _ref2.dofile,
     dofile = _ref2$dofile === undefined ? {} : _ref2$dofile;
   console.log("sellsy ", dofile);
